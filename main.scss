@@ -18,3 +18,39 @@ $color: royalblue;
     }
   }
 }
+
+.btn {
+  position: absolute;
+  &.active {
+    color: red;
+  }
+}
+.list {
+  li {
+    &:last-child {
+      margin-right: 100;
+    }
+  }
+}
+.fs {
+  &-small { font-size: 12px; }
+  &-medium { font-size: 14px; }
+  &-large { font-size: 16px; }
+}
+.box {
+  font: {
+    weight: bold;
+    size: 10px;
+    family: sans-serif;
+  };
+  margin: {
+    top: 10px;
+    left: 20px;
+  };
+  padding: {
+    top: 10px;
+    bottom: 40px;
+    left: 20px;
+    right: 30px;
+  };
+}
