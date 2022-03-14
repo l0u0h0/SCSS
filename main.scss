@@ -3,5 +3,18 @@ $color: royalblue;
 .container {
   h1 {
     color: $color;
+    background-color: orange;
+    // font-size: 60px;
+  }
+  ul {
+    li {
+      font-size: 40px;
+      .name {
+        color: royalblue;
+      }
+      .age {
+        color: orange;
+      }
+    }
   }
 }
