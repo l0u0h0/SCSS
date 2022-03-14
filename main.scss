@@ -85,3 +85,17 @@ div {
     @include center;
   }
 }
+@mixin box($size: 80px, $color: tomato) {
+  width: $size;
+  height: $size;
+  background-color: $color;
+}
+.container {
+  @include box(200px, red);
+  .item {
+    @include box(80px, green);
+  }
+}
+.box {
+  @include box;
+}

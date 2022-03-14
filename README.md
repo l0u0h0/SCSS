@@ -184,3 +184,38 @@ span {
   @include center;
 }
 ```
+- 함수로 인수를 받아 사용하듯 매개변수를 설정해 인수를 받아 사용할 수 있다.
+```scss
+@mixin box($size) {
+  width: $size;
+  height: $size;
+  background-color: tomato;
+}
+.container {
+  @include box(200px);
+  .item {
+    @include box(100px);
+  }
+}
+.box {
+  @include box(100px);
+}
+@mixin box($size: 80px, $color: tomato) {
+  width: $size;
+  height: $size;
+  background-color: $color;
+}
+.container {
+  @include box(200px, red);
+  .item {
+    @include box(80px, green);
+  }
+}
+.box {
+  @include box;
+}
+```
+- 이와 같이 기본 값을 지정해 사용할 수 있다.  
+인수를 여러 개 두어 사용할 수도 있으며 이때 매개변수는 순서대로 지정해줘야한다.
+- 혹은 `(80px, green)`대신 `($color: green)`과 같이  
+키워드 인수를 지정해줄 수 있다.
