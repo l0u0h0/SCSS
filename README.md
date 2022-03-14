@@ -115,3 +115,36 @@ $size: 200px;
   }
 }
 ```
+### 연산
+```scss
+div {
+  width: 20px + 20px;
+  height: 40px - 10px;
+  font-size: 10px * 2;
+  margin: 30px / 2;
+  padding: 20px % 7;
+}
+```
+```css
+div {
+  width: 40px;
+  height: 30px;
+  font-size: 20px;
+  margin: 30px/2;
+  padding: 6px;
+}
+```
+- `margin`에서 나뉜 결과로 나오지 않은 이유
+```scss
+span {
+  font-size: 10px;
+  line-height: 10px;
+  font-family: serif;
+  font: 10px / 10px serif;
+}
+```
+- 이렇게 `font`라는 단축 속성을 이용할 때 / 기호를 사용하기에  
+나누기를 사용할 때는 `margin: (size/2)`로 사용하거냐  
+변수에 담아서 사용해야한다.
+- 산술 연산자에서는 단위가 기본적으로 같아야한다.
+- `calc()` 를 사용하면 단위가 다르더라도 연산이 된다.

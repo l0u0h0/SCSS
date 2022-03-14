@@ -54,3 +54,17 @@ $color: royalblue;
     right: 30px;
   };
 }
+div {
+  $size: 30px;
+  width: 20px + 20px;
+  height: 40px - 10px;
+  font-size: 10px * 2;
+  margin-left: (10px + 12px) / 2;
+  margin-top: $size / 2;
+  padding: 20px % 7;
+}
+.bax {
+  background-color: royalblue;
+  width: calc(100% - 200px);
+  height: 100px;
+}
