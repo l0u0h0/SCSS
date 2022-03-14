@@ -149,3 +149,38 @@ span {
 - 산술 연산자에서는 단위가 기본적으로 같아야한다.
 - `calc()` 를 사용하면 단위가 다르더라도 연산이 된다.
 ### 재활용
+```scss
+.containe {
+  width: 200px;
+  height: 200px;
+  background-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .item {
+    width: 100px;
+    height: 100px;
+    background-color: royalblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+```
+- 이 코드를 `@mixin`을 사용해 `@include`로 가져와서 사용 가능
+```scss
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  @include center;
+  .item {
+    @include center;
+  }
+}
+.box {
+  @include center;
+}
+```
