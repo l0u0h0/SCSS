@@ -236,3 +236,33 @@ for (let i = 0; i < 10; i += 1 ) {
 }
 ```
 `#{i}`를 이용해 문자를 보간해 지정해줌
+### 함수
+- js와 마찬가지로 `function` 키워드를 사용해 함수 사용
+- `mixin`은 속성의 모임 정도로 이해하기.
+- 함수와 유사한 개념은 `function`으로 사용
+```scss
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@function ratio($size, $ratio) {
+  @return $size * $ratio
+}
+.box {
+  $width: 160px;
+  width: $width;
+  height: ratio($width, 9/16);
+  @include center;
+}
+```
+- `css`로 변환되면
+```css
+.box {
+  width: 160px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
