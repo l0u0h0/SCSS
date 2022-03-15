@@ -266,3 +266,125 @@ for (let i = 0; i < 10; i += 1 ) {
   align-items: center;
 }
 ```
+- #### 색상내장함수
+```html
+<div class="box"></div>
+<div class="box built-in"></div>
+```
+```scss
+.box {
+  $color: royalblue;
+  width: 200px;
+  height: 100px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: $color;
+  &.built-in {
+    background-color: mix($color, red);
+  }
+}
+```
+- `mix()` 함수를 사용해 `royalblue`와 `red` 색상이 섞인 색을 만들 수 있음
+```scss
+.box {
+  $color: royalblue;
+  width: 200px;
+  height: 100px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: $color;
+  &.built-in {
+    background-color: lighten($color, 10%);
+  }
+}
+```
+- `lighten()` 함수를 사용하면 10%만큼 더 밝게 만들어 줄 수 있다.
+```scss
+.box {
+  $color: royalblue;
+  width: 200px;
+  height: 100px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: $color;
+  &.built-in {
+    background-color: lighten($color, 10%);
+  }
+  &:hover {
+    background-color: darken($color, 10%);
+  }
+}
+```
+- `darken()` 함수를 사용하면 10%만큼 더 어둡게 만들어 줄 수 있다.
+```scss
+.box {
+  $color: royalblue;
+  width: 200px;
+  height: 100px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: $color;
+  &.built-in {
+    background-color: saturate($color, 40%);
+  }
+}
+```
+- `saturate()` 함수를 사용하면 채도를 높여줄 수 있다.
+```scss
+.box {
+  $color: royalblue;
+  width: 200px;
+  height: 100px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: $color;
+  &.built-in {
+    background-color: desaturate($color, 40%);
+  }
+}
+```
+- `desaturate()` 함수를 사용하면 반대로 채도를 낮춰줄 수 있다.
+```scss
+.box {
+  $color: royalblue;
+  width: 200px;
+  height: 100px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: $color;
+  &.built-in {
+    background-color: grayscale($color);
+  }
+}
+```
+- `grayscale()` 함수는 두 번째 인수가 필요하지 않으며 회색으로 만들어준다.
+```scss
+.box {
+  $color: royalblue;
+  width: 200px;
+  height: 100px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: $color;
+  &.built-in {
+    background-color: invert($color);
+  }
+}
+```
+- `invert()` 함수는 색상을 반전시키는 효과를 준다.
+```scss
+.box {
+  $color: royalblue;
+  width: 200px;
+  height: 100px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: $color;
+  &.built-in {
+    background-color: rgba($color, .5);
+  }
+}
+```
+- `rgba()` 함수는 두 번째 인수로 해당 색상의 투명도를 설정할 수 있다.
+- 원래의 `css`에서 사용하는 `rgba`함수는 인수를 네 개로 받아 사용하지만  
+`scss`에서 사용하는 `rgba`함수는 두 개의 인수만을 받아 사용한다.
