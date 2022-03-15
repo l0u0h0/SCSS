@@ -472,3 +472,28 @@ $map: (
   color: yellow;
 }
 ```
+### 재활용(@content)
+- `@mixin` 으로 코드를 재사용할 때  
+`@include` 로 중괄호를 열고 닫아 추가적인 내용을 적을 수 있도록 할 때 사용
+```scss
+@mixin left-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  @content;
+}
+.container {
+  width: 100px;
+  height: 100px;
+  @include left-top;
+}
+.box {
+  width: 200px;
+  height: 300px;
+  @include left-top { // @content로 추가적인 내용 작성
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }
+}
+```
