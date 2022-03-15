@@ -99,3 +99,8 @@ div {
 .box {
   @include box;
 }
+@for $i from 1 through 10 {
+  .box:nth-child(#{$i}) {
+    width: 100px;
+  }
+}
