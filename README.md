@@ -420,3 +420,55 @@ $map: (
 - `list` 자바스크립트의 배열과 유사한 형태
 - `map` 자바스크립트의 객체 데이터와 유사한 형태, 키 밸류의 형태를 지님  
 scss에서는 소괄호로 사용
+### 반복문(@each)
+- `list`, `map` 을 사용하기 위해선 `@each`를 사용해야 함
+```scss
+$number: 1;     // .5, 100px, 1em
+$string: bold;  // relative, "../images/a.png"
+$color: red;    // blue, #FFFF00, rgba(0,0,0,.i)
+$boolean: true; // false
+$null: null;
+$list: orange, royalblue, yellow;
+$map: (
+  o: orange,
+  r: royalblue,
+  y: yellow
+);
+@each $c in $list {
+  .box {
+    color: $c;
+  }
+}
+@each $key, $value in $map {
+  .box-#{$key} {
+    color: $value;
+  }
+}
+```
+- `@each` 구문이 css로 변환되면
+```css
+/* list */
+.box {
+  color: orange;
+}
+
+.box {
+  color: royalblue;
+}
+
+.box {
+  color: yellow;
+}
+/* map */
+.box-o {
+  color: orange;
+}
+
+.box-r {
+  color: royalblue;
+}
+
+.box-y {
+  color: yellow;
+}
+```
