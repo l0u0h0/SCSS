@@ -397,3 +397,26 @@ for (let i = 0; i < 10; i += 1 ) {
 scss 파일이면 확장자명을 적지 않아도 된다.
 - `@import "./sub", "./sub2";`와 같이 쉼표를 이용해 두 파일을  
 불러올 수도 있다.
+### 데이터 유형
+```scss
+$number: 1;     // .5, 100px, 1em
+$string: bold;  // relative, "../images/a.png"
+$color: red;    // blue, #FFFF00, rgba(0,0,0,.i)
+$boolean: true; // false
+$null: null;
+$list: orange, royalblue, yellow;
+$map: (
+  o: orange,
+  r: royalblue,
+  y: yellow
+);
+```
+- `number` 숫자 뿐 아니고 단위가 붙은 숫자도 취급
+- `string` 글자체나 관계, 앞뒤로 따옴표가 붙은 문자열을 취급
+- `color` 색상을 의미하는 문자열은 색상 데이터로 취급
+- `boolean` 참 거짓을 나누는 데이터
+- `null` 널 값을 의미  
+널 값을 주면 해당 속성을 없애줄 수 있다.
+- `list` 자바스크립트의 배열과 유사한 형태
+- `map` 자바스크립트의 객체 데이터와 유사한 형태, 키 밸류의 형태를 지님  
+scss에서는 소괄호로 사용
